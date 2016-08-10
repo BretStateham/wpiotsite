@@ -11,7 +11,7 @@
 
 function dwwp_remove_dashboard_widget() {
     //do something
-    remove_meta_box('dashboard_primary', 'dashboard','postbox_container_2');
+    remove_meta_box('dashboard_primary', 'dashboard','side');
 }
 
 //add_action($hook,$function_to_add,$priority,$accepted_args);
