@@ -11,6 +11,15 @@
 
 function wpiot_send_iot_message_on_comment_post() {
     //do something
+
+    require __DIR__ . '/vendor/autoload.php';
+
+    $connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
+    $client = new AzureIoTHub\DeviceClient($connectionString);
+
+    $response = $client->sendEvent('Comment Posted!');
+
+    print($response->getStatusCode());
     
 }
 
