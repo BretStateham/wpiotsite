@@ -10,10 +10,10 @@
 */
 
 function wpiot01_send_iot_message_on_comment_post($comment_id, $comment_approved, $comment_data) {
-    //do something
+    //do something else
 
     require __DIR__ . '/vendor/autoload.php';
-
+    
     try {
 
       //Try posting to Azure Function using Guzzle
