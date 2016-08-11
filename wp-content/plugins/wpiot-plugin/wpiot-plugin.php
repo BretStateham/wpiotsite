@@ -9,7 +9,7 @@
 * License: GPLv2
 */
 
-function wpiot_send_iot_message_on_comment_post() {
+function wpiot_send_iot_message_on_comment_post($comment_id, $comment_approved, $comment_data) {
     //do something
 
     require __DIR__ . '/vendor/autoload.php';
@@ -19,11 +19,11 @@ function wpiot_send_iot_message_on_comment_post() {
     $connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
     $client = new AzureIoTHub\DeviceClient($connectionString);
 
-    $response = $client->sendEvent('Comment Posted!');
+    $response = $client->sendEvent('Comment Posted!' . $comment_data);
 
     print($response->getStatusCode());
     
 }
 
 
-add_action('comment_post','wpiot_send_iot_message_on_comment_post');
+add_action('comment_post','wpiot_send_iot_message_on_comment_post', 10, 3);
