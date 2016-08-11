@@ -16,10 +16,10 @@ function wpiot_send_iot_message_on_comment_post($comment_id, $comment_approved, 
 
     //curl_setopt($ch, CURLOPT_CAINFO, getenv('ProgramFiles(x86)') . '\Git\usr\ssl\certs\ca-bundle.crt');
 
-    $connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
-    $client = new AzureIoTHub\DeviceClient($connectionString);
+    //$connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
+    //$client = new AzureIoTHub\DeviceClient($connectionString);
 
-    $response = $client->sendEvent('Comment Posted!' . $comment_data);
+    //$response = $client->sendEvent('Comment Posted!' . $comment_data);
 
 
     //Try posting to Azure Function using Guzzle
@@ -31,7 +31,7 @@ function wpiot_send_iot_message_on_comment_post($comment_id, $comment_approved, 
     ]);
     $response = $guzzle->post('https://wpiotcode.azurewebsites.net/api/MonkeyDanceHttp');
 
-    print($response->getStatusCode());
+    //print($response->getStatusCode());
     
 }
 
