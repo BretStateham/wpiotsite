@@ -14,7 +14,7 @@ function wpiot01_send_iot_message_on_comment_post($comment_id, $comment_approved
 
     require __DIR__ . '/vendor/autoload.php';
     
-    try {
+    //try {
 
       //Try posting to Azure Function using Guzzle
       $guzzle = new GuzzleHttp\Client([
@@ -23,11 +23,12 @@ function wpiot01_send_iot_message_on_comment_post($comment_id, $comment_approved
         // You can set any number of default request options.
         'timeout'  => 2.0,
       ]);
+      
       $response = $guzzle->post('https://wpiotcode.azurewebsites.net/api/MonkeyDanceHttp');
 
-    } catch (Exception $e) {
-        //Do nothing...
-    }
+    //} catch (Exception $e) {
+    //    //Do nothing...
+    //}
 
     //print($response->getStatusCode());
     
