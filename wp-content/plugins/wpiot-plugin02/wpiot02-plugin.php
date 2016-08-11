@@ -27,4 +27,4 @@ function wpiot02_send_iot_message_on_comment_post($comment_id, $comment_approved
 }
 
 
-add_action('comment_post','wpiot_send_iot_message_on_comment_post', 10, 3);
+add_action('comment_post','wpiot02_send_iot_message_on_comment_post', 10, 3);
