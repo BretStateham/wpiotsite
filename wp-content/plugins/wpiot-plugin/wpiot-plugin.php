@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Bret's WordPress Azure IoT Plugin 01
+* Plugin Name: Bret's WordPress Azure IoT Plugin
 * Plugin URI: http://bretstateham.com 
 * Description: Make the monkey dance on comments 
 * Author: Bret Stateham
