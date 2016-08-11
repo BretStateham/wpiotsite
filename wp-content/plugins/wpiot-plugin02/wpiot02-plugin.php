@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Bret's WordPress Azure IoT Plugin
+* Plugin Name: Bret's WordPress Azure IoT Plugin 02
 * Plugin URI: http://bretstateham.com 
 * Description: Demo plug in to post to an Azure IoT Hub when a comment is posted 
 * Author: Bret Stateham
