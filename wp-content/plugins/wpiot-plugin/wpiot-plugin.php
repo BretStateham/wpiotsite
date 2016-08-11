@@ -14,25 +14,25 @@ function wpiot_send_iot_message_on_comment_post($comment_id, $comment_approved, 
 
     require __DIR__ . '/vendor/autoload.php';
     
-    //try {
+    try {
 
-      $connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
-      $client = new AzureIoTHub\DeviceClient($connectionString);
-      $response = $client->sendEvent('Comment Posted!' . $comment_data);
+      ///$connectionString = 'HostName=wpiothub.azure-devices.net;DeviceId=wpiotsite;SharedAccessKey=SdEzHCKOGLTnVvur7gs0VAgC7wsVsYjzWNlie3Urtg0=';
+      ///$client = new AzureIoTHub\DeviceClient($connectionString);
+      //$response = $client->sendEvent('Comment Posted!' . $comment_data);
 
-      // //Try posting to Azure Function using Guzzle
-      // $guzzle = new GuzzleHttp\Client([
-      //   // Base URI is used with relative requests
-      //   'base_uri' => 'http://httpbin.org',
-      //   // You can set any number of default request options.
-      //   'timeout'  => 2.0,
-      // ]);
+      //Try posting to Azure Function using Guzzle
+       $guzzle = new GuzzleHttp\Client([
+         // Base URI is used with relative requests
+         'base_uri' => 'http://httpbin.org',
+         // You can set any number of default request options.
+         'timeout'  => 2.0,
+       ]);
       
-      // $response = $guzzle->post('https://wpiotcode.azurewebsites.net/api/MonkeyDanceHttp');
+       $response = $guzzle->post('https://wpiotcode.azurewebsites.net/api/MonkeyDanceHttp');
 
-    //} catch (Exception $e) {
-    //    //Do nothing...
-    //}
+    } catch (Exception $e) {
+        //Do nothing...
+    }
 
     //print($response->getStatusCode());
     
